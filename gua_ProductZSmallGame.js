@@ -64,7 +64,9 @@ async function run() {
 		let n = 1
 		$.runFalag = false
 		do{
+			$.activityGameInfo = ''
 			await takePostRequest('游戏奖励');
+			if(!$.activityGameInfo) continue
 			console.log(`刷新第${n}次游戏奖励: ${$.activityGameInfo.currentSection == 2 && '已经领过奖励' || $.awardName + ' ' + $.awardSpeed}`)
 			if($.awardSpeed != 15 && $.runFalag && $.activityGameInfo.currentSection != 2){
 				console.log('等待10秒 刷新奖励')
@@ -85,7 +87,7 @@ async function run() {
 				await $.wait(parseInt(Math.random() * 2000 + 3000, 10))
 				await takePostRequest('领取奖励');
 			}
-		}else if($.activityGameInfo.currentSection != 2){
+		}else if($.activityGameInfo && $.activityGameInfo.currentSection != 2){
 			console.log(`刷新次数达${s}次,请重新执行脚本`)
 		}
 		await $.wait(parseInt(Math.random() * 2000 + 3000, 10))
