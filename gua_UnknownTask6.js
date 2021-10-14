@@ -26,7 +26,7 @@ All变量适用
 ============Quantumultx===============
 [task_local]
 #10.14~10.20 品牌联合
-47 4 8-18 10 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_UnknownTask6.js, tag=10.14~10.20 品牌联合, enabled=true
+47 4 14-20 10 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_UnknownTask6.js, tag=10.14~10.20 品牌联合, enabled=true
 
 */
 let guaunknownTask_addSku = "false"
@@ -85,7 +85,6 @@ let activityCookie =''
       await run();
       if(i == 0 && !$.actorUuid) break
       if($.outFlag || $.activityEnd) break
-      if($.index >= 1) break
     }
   }
   if($.outFlag) {
