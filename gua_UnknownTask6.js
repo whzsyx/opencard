@@ -29,7 +29,7 @@ All变量适用
 47 4 14-20 10 * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_UnknownTask6.js, tag=10.14~10.20 品牌联合, enabled=true
 
 */
-let guaunknownTask_addSku = "false"
+let guaunknownTask_addSku = "true"
 let guaopenwait = "0"
 
 const $ = new Env('10.14~10.20 品牌联合');
