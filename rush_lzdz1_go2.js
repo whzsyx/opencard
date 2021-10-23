@@ -28,7 +28,7 @@ if ($.isNode()) {
         return;
     }
     
-    authorCodeList = await getAuthorCodeList('')
+    authorCodeList = await getAuthorCodeList('https://raw.githubusercontent.com/whzsyx/updateTeam/main/shareCodes/lzdz1_go2.json')
     if(authorCodeList === '404: Not Found'){
         authorCodeList = [
             'e4af9e2576f742518d31de9d38c34b14',
