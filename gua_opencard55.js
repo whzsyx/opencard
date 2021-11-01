@@ -153,6 +153,7 @@ async function run() {
       return
     }
     await takePostRequest('activity_load');
+    if($.hotFlag) return
     if(Date.now() > $.endTime){
       $.MixNick = ''
       $.activityEnd = true
@@ -428,6 +429,11 @@ async function dealReturn(type, data) {
               }
             }else if(res.msg){
               console.log(`${title || type} ${res.msg || ''}`)
+            }else if(res.errorMessage){
+              if(res.errorMessage.indexOf('火爆') >-1 ){
+                $.hotFlag = true
+              }
+              console.log(`${title || type} ${res.errorMessage || ''}`)
             }else{
               console.log(`${title || type} ${data}`)
             }
