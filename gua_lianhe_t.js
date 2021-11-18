@@ -2,7 +2,7 @@
 原作者gua,修改自用
 入口:https://jinggengjcq-isv.isvjcloud.com/fronth5/#/pages/unitedCardNew20211118/unitedCardNew20211118?actId=002sfydcg550d840ce832_1118
 #11.18~11.23 联合开卡
-47 1 18-23 12 * gua_lianhe.js
+47 1 18-23 11 * gua_lianhe_t.js
 
 */
 let guaopencard_addSku = "false"
