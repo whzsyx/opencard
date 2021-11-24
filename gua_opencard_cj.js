@@ -1,5 +1,5 @@
 /*
-11.01~11.12 惠聚11.11好物乐享不停 [gua_opencard53.js]
+ [gua_opencard53.js]
 新增开卡脚本
 一次性脚本
 
@@ -24,7 +24,7 @@ guaopenwait53="0"
 
 All变量适用
 ————————————————
-入口：[ 11.01~11.12 惠聚11.11好物乐享不停 (https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzlbklzmsk20211101A&shareUuid=738f456654af4df0aa118c2536843bdd)]
+入口：[ 11.01~11.12 惠聚11.11好物乐享不停 (https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzdnwmqr20211108A&shareUuid=966d76e8d6fb4d8ba1bcfe2fb0a69aa1)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -32,14 +32,14 @@ All变量适用
 ============Quantumultx===============
 [task_local]
 #11.01~11.12 惠聚11.11好物乐享不停
-47 4 1-12 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard53.js, tag=11.01~11.12 惠聚11.11好物乐享不停, enabled=true
+47 4 1-12 11 * gua_opencard_cj.js, tag=11.01~11.12 惠聚11.11好物乐享不停, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
 let guaopenwait = "0"
 
-const $ = new Env('11.01~11.12 惠聚11.11好物乐享不停');
+const $ = new Env('开卡抽奖');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cleanCart = ''
@@ -94,8 +94,8 @@ let activityCookie =''
     });
     return;
   }
-  $.activityId = "dzdnwmqr20211108A"
-  $.shareUuid = "966d76e8d6fb4d8ba1bcfe2fb0a69aa1"
+  $.activityId = "dzkwdlt20211125A"
+  $.shareUuid = "9a7635b368734d2eb6048c6a44402427"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
