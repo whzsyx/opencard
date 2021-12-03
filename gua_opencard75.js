@@ -26,15 +26,15 @@ All变量适用
 请求太频繁会被黑ip
 过10分钟再执行
 
-cron:47 2 1-15 11 *
+cron:47 2 1-15 12 *
 ============Quantumultx===============
 [task_local]
 #12.1~12.15 12.12品牌礼遇 天降惊喜
-47 2 1-15 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard75.js, tag=12.1~12.15 12.12品牌礼遇 天降惊喜, enabled=true
+47 2 1-15 12 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard75.js, tag=12.1~12.15 12.12品牌礼遇 天降惊喜, enabled=true
 
 */
-let guaopencard_addSku = "true"
-let guaopencard = "true"
+let guaopencard_addSku = "false"
+let guaopencard = "false"
 let guaopenwait = "0"
 let guaopencard_draw = "0"
 
