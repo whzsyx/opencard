@@ -1,6 +1,5 @@
 /*
 品质女装 年终狂欢
-cron:47 1 23-30 11 * rush_lzdz_women.js
 默认执行脚本。如果需要不执行
 环境变量 NO_RUSH=false
 */
