@@ -32,7 +32,7 @@ All变量适用
 过10分钟再执行
 
 
-cron:47 4 27-30,1,2 10,11 *
+cron:47 4 27-30,1,2 11,12 *
 ============Quantumultx===============
 [task_local]
 #11.27~12.2 联合开卡
@@ -104,7 +104,7 @@ let activityCookie =''
   // return
   $.appkey = '51B59BB805903DA4CE513D29EC448375'
   $.userId = '10299171'
-  $.actId = '0ce138cf44eb4b62999fdf1042_1127'
+  $.actId = 'c196cba0e4204254a44c_120101'
   $.MixNicks = ''
   $.inviteNick = 'jJngxInVOgsjftAvjP1dgF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w=='
   console.log(`活动地址:https://jinggengjcq-isv.isvjcloud.com/fronth5/#/pages/unitedCardNew20211125/unitedCardNew20211125?actId=0ce138cf44eb4b62999fdf1042_1127`)
