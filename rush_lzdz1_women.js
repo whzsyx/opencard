@@ -1,6 +1,7 @@
 /*
 品质女装 年终狂欢
 默认执行脚本。如果需要不执行
+cron 7 2 25-29 11 * rush_lzdz1_women.js
 环境变量 NO_RUSH=false
 */
 const $ = new Env('品质女装 年终狂欢');
