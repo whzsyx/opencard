@@ -33,11 +33,7 @@ All变量适用
 
 17:/￥S0zk02mXrdFcfo￥
 
-cron:47 4 1-12 11 *
-============Quantumultx===============
-[task_local]
-#12.1~12.12 联合开卡
-47 4 1-12 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard77.js, tag=12.1~12.12 联合开卡, enabled=true
+47 4 1-12 11 * gua_opencard77.js
 
 */
 let guaopencard_addSku = "true"
