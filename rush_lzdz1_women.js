@@ -1,6 +1,5 @@
 /*
 品质女装 年终狂欢
-cron 
 cron:47 1 23-30 11 * rush_lzdz_women.js
 https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzsdfkl20211204A&shareUuid=8208fc186f0241f785c38c0a934aa6b7
 
