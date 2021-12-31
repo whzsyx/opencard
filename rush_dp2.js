@@ -1,10 +1,12 @@
 /*
-cron:47 4 1-12 11 * rush_jinggengjcq_dapainew6.js
+cron:47 4 1-12 11 * rush_dp2.js
 */
-const $ = new Env("大牌联合");
+const $ = new Env("大牌联合12.20-12.26上鲜");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
+const cp = $.isNode() ? require('child_process') : '';
 let cookiesArr = [], cookie = '', message = '';
+const Base64 = require("js-base64")
 let ownCode = null;
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -25,6 +27,10 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
+
+        authorCodeList = [
+            'Xv1dl4pC69U/jEbum78udF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
+        ]
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i]
@@ -46,17 +52,9 @@ if ($.isNode()) {
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-            authorCodeList = [
-                'Xv1dl4pC69U/jEbum78udF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
-                // 'nYXy96GqoNLmoZYWMzThH14tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
-                // 'NIIGH1E3ihp+jukMM7UfkV4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
-                // 'gHLldBJLPdovONAzAjPTUMjNhNaYFy2HteErE6izlhTf9nrGY7gBkCdGU4C6z/xD',
-                // 'Us3Ez79jWo+EjxEstFXeAsjNhNaYFy2HteErE6izlhTf9nrGY7gBkCdGU4C6z/xD',
-            ]
             $.appkey = "51B59BB805903DA4CE513D29EC448375"
             $.userId = "10299171"
-            $.actId = "82243a5746d04_1220"
-            // $.authorCode = authorCodeList[random(0, authorCodeList.length)]
+            $.actId = "tdggygdyeh445278i_220102"
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             console.log('去助力 -> '+$.authorCode);
             await openCardNew();
