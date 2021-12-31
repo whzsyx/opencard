@@ -1,7 +1,7 @@
 /*
 cron:47 4 1-12 11 * rush_dp1.js
 */
-const $ = new Env("大牌联合12.23-1.2上鲜");
+const $ = new Env("大牌联合12.18-12.24方家");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const cp = $.isNode() ? require('child_process') : '';
@@ -54,7 +54,7 @@ if ($.isNode()) {
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             $.appkey = "51B59BB805903DA4CE513D29EC448375"
             $.userId = "10299171"
-            $.actId = "58f75e450e7b4ac99871bd9f_1223"
+            $.actId = "3a8de8d4fc694ed_220101"
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             console.log('去助力 -> '+$.authorCode);
             await openCardNew();
