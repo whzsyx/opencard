@@ -1,10 +1,10 @@
 /**
-大牌联合 赢大额京豆
-12.1 - 12.12
-https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity/6758593?activityId=dz211122100001616201shop&shareUuid=6579dde1e3b34091baecb2cd4381786f
+瓜分千万京豆 免费抽大奖
+
+https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity/6758593?activityId=dz220107100001616201shop&shareUuid=1d0d5fd0a72f4f9cb43f3c0ee722c19e
 **/
 
-const $ = new Env("大牌联合 赢大额京豆");
+const $ = new Env("瓜分千万京豆 免费抽大奖");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
@@ -29,10 +29,12 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
+  
 
         authorCodeList = [
             'b6441d5754b44f8ea25540a365a91b7b',
         ]
+
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i]
@@ -103,7 +105,7 @@ async function superFans() {
                 } else {
                     $.log("已经关注过了\n")
                     await $.wait(2000);
-                    // return
+                    return
                 }
                 $.log("\n加入店铺会员");
                 if ($.openCardStatus) {
@@ -138,6 +140,7 @@ async function superFans() {
                             );
                         }
                         await $.wait(1000);
+                        await getFirstLZCK()
                         await task(
                             "shop/league/checkOpenCard",
                             `activityId=${$.activityId}&actorUuid=${$.actorUuid}&shareUuid=${$.authorCode
@@ -145,7 +148,7 @@ async function superFans() {
                         );
                         await $.wait(1000);
                     }
-
+                    await getFirstLZCK()
                     $.log("\n加入购物车")
                     if (!$.activityContent['addSku'].allStatus) {
                         await task('shop/league/saveTask', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&actorUuid=${$.actorUuid}&shareUuid=${encodeURIComponent($.authorCode)}&taskType=2&taskValue=2`)
@@ -184,6 +187,7 @@ function task(function_id, body, isCommon = 0) {
                                 case 'dz/common/getSimpleActInfoVo':
                                     $.jdActivityId = data.data.jdActivityId;
                                     $.venderId = data.data.venderId;
+                                    // console.log($.venderId)
                                     break;
                                 case 'wxActionCommon/getUserInfo':
                                     if (data.data.yunMidImageUrl) {
@@ -306,14 +310,15 @@ function bindWithVender(body, venderId) {
                 } else {
                     res = JSON.parse(data)
                     if (res.success) {
-                        if (res.result.giftInfo && res.result.giftInfo.giftList) {
-                            for (const vo of res.result.giftInfo.giftList) {
-                                if (vo.prizeType === 4) {
-                                    $.log(`获得【${vo.quantity}】京豆`)
-                                    $.bean += vo.quantity
-                                }
-                            }
-                        }
+                        console.log(res)
+                        // if (res.result.giftInfo && res.result.giftInfo.giftList) {
+                        //     for (const vo of res.result.giftInfo.giftList) {
+                        //         if (vo.prizeType === 4) {
+                        //             $.log(`获得【${vo.quantity}】京豆`)
+                        //             $.bean += vo.quantity
+                        //         }
+                        //     }
+                        // }
                     }
                 }
             } catch (error) {
