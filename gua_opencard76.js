@@ -31,7 +31,7 @@ All变量适用
 请求太频繁会被黑ip
 过10分钟再执行
 
-cron:47 3 3-12 12 *
+cron:47 3 3-12 11 *
 ============Quantumultx===============
 [task_local]
 #12.3~12.12 12.12 好物狂欢盛典
@@ -100,8 +100,8 @@ let activityCookie =''
     });
     return;
   }
-  $.activityId = "dzlhkklblzms20211227"
-  $.shareUuid = "1062c19ba1a24af8b3009fff5f133280"
+  $.activityId = "dzlhkkkbblnt20220121A"
+  $.shareUuid = "00845daa0ed64e9ba3e520be0dd760e1"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
 
