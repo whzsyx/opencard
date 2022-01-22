@@ -39,7 +39,7 @@ let guaopencard_addSku = "true"
 let guaopencard = "true"
 let guaopenwait = "0"
 
-const $ = new Env('10.31~11.11 品牌盛典 11.11狂欢购');
+const $ = new Env('大牌服饰盛典');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cleanCart = ''
