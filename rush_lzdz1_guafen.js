@@ -1,7 +1,7 @@
 /*
 臻宠会员 甜蜜告白
 2022年2月8日 - 2022年2月15日
-cron:47 4 1-12 11 * rush、_lzdz_guafen.js
+cron:47 4 1-12 11 * rush_lzdz_guafen.js
 https://lzdz1-isv.isvjd.com/dingzhi/customized/common/activity/483475?activityId=dzlhkkkbblnt20220208&shareUuid=2d5b7a9b3e82473797cdf557205f355f
 */
 const $ = new Env("跨界宠粉  豪礼放送");
