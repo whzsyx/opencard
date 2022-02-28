@@ -1,5 +1,5 @@
 /*
-cron:47 4 1-12 11 * jd_jinggengjcq_dapainew.js
+cron 1 8 11-15 12 * jd_jinggengjcq_dapainew.js
 */
 const $ = new Env("大牌联合");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -52,9 +52,10 @@ if ($.isNode()) {
             ]
             $.appkey = "51B59BB805903DA4CE513D29EC448375"
             $.userId = "10299171"
-            $.actId = "b134063c47974580a18d208412_22021501"
-         //   $.actId = "628b293b355c42e39d5fea6f583e_20220212"//2.12
-            //  $.actId = "98a976e9f0_22021301"//2.10-2.16小糊涂仙
+           // $.actId = "b134063c47974580a18d208412_22021501"
+            //$.actId = "98a976e9f0_22021301"//2.10-2.16小糊涂仙
+            $.actId = "d6327577cd0d48b9b2d8cfdad3_22030103"//3.1-3.8 入口: https://jinggengjcq-isv.isvjcloud.com/fronth5/#/pages/unitedCardNew2022030102/unitedCardNew2022030102?actId=d6327577cd0d48b9b2d8cfdad3_22030103
+           // $.actId = "29a7e74b884d42adb90d8_22022001"//2.20-2.26 入口:https://jinggengjcq-isv.isvjcloud.com/fronth5/#/pages/unitedCardNew20220220/unitedCardNew20220220?actId=29a7e74b884d42adb90d8_22022001&bizExtString=c2hhcmVOaWNrOlh2MWRsNHBDNjlVJTJGakVidW03OHVkRjR0TE5ZQTRzZXVBNjdNT0lZUXhFazNWbDklMkJBVm80TkYlMkJ0Z3llSWM2QTZrZEszckxCUXBFUUg5VjR0ZHJyaDB3JTNEJTNE
             // $.authorCode = authorCodeList[random(0, authorCodeList.length)]
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             console.log('去助力 -> '+$.authorCode);
