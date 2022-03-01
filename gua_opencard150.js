@@ -7,7 +7,7 @@ let guaopencard = "true"
 let guaopenwait = "0"
 let guaopencard_draw = "3"
 
-const $ = new Env('(尝鲜-38节好礼派送');
+const $ = new Env('尝鲜-38节好礼派送');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cleanCart = ''
