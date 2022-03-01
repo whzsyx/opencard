@@ -3,7 +3,7 @@
 cron:47 4 1-12 11 * jd_lzdz1_customized4.js
 https://lzdz1-isv.isvjd.com/dingzhi/customized/common/activity/483475?activityId=dzlhkkkbblnt20220208&shareUuid=2d5b7a9b3e82473797cdf557205f355f
 */
-const $ = new Env("遇见爱  遇见你");
+const $ = new Env("王冠");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
