@@ -9,6 +9,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let ownCode = null;
 let authorCodeList = []
+console.log('入口:https://lzdz1-isv.isvjd.com/dingzhi/customized/common/activity/2227223?activityId=uniongame2022030101goddess&shareUuid=f01a72ee5e8c4699be8327b0f77320ab')
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -59,7 +60,6 @@ if ($.isNode()) {
             $.authorNum = `${random(1000000, 9999999)}`
             $.randomCode = random(1000000, 9999999)
             $.activityId = 'uniongame2022030101goddess'
-            console.log('入口:https://lzdz1-isv.isvjd.com/dingzhi/customized/common/activity/2227223?activityId=uniongame2022030101goddess&shareUuid=f01a72ee5e8c4699be8327b0f77320ab')
             $.activityShopId = '1000084524'
             $.activityUrl = `https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=cd2022n4ci22tlj1s2w3245u1mk&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=${$.activityShopId}&lng=00.000000&lat=00.000000&sid=&un_area=`
             await member();
