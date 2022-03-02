@@ -1,7 +1,7 @@
 /*
 诠“饰”你的每一面
 https://lzdz1-isv.isvjcloud.com/dingzhi/fashion/union/activity/13145?activityId=dz3438d88c47209a29355c6192b127
-cron:25 12 2-8 3 * jd_lzdz1_fashion.js
+cron:25 12 2-8 11 * jd_lzdz1_fashion.js
 */
 const $ = new Env("诠“饰”你的每一面");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
