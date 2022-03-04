@@ -10,9 +10,8 @@ cron:31 4,13 1-8 3 *
 ============Quantumultx===============
 [task_local]
 #3.1-3.8 约惠女神节，惊喜享不停
-31 4,13 1-8 1 * jd_opencardL88.js, tag=3.1-3.8 约惠女神节，惊喜享不停, enabled=true
-入口:
-https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=unionkbblnt20220301dzlhkk&shareUuid=c31fb16348d3454d97c4328d3f243925
+31 4,13 1-8 3 * jd_opencardL88.js, tag=3.1-3.8 约惠女神节，惊喜享不停, enabled=true
+
 */
 const $ = new Env('赢百元e卡 万元京豆');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -127,16 +126,17 @@ async function run() {
         if(o.status == 0){
           flag = true
           $.joinVenderId = o.venderId
-          await joinShop()
-		  if($.joinShopresmessage === '活动太火爆，请稍后再试'){
-			  console.log('重新开卡')
-			  await joinShop()
-		  }
-          await $.wait(parseInt(Math.random() * 2000 + 2000, 10))
+          let joinShopResp = await joinShop();
+          let join2RespTryCount = 0;
+          while (joinShopResp === '' || joinShopResp.indexOf('火爆') !== -1 && join2RespTryCount <= 10) {
+            $.log(joinShopResp)
+            join2RespTryCount ++
+            await $.wait(100)
+            joinShopResp = await joinShop();
+          }
           await takePostRequest('activityContent');
           await takePostRequest('drawContent');
           await takePostRequest('checkOpenCard');
-          await $.wait(parseInt(Math.random() * 3000 + 2000, 10))
         }
       }
     }else{
@@ -147,7 +147,7 @@ async function run() {
     if(!$.followShop && !$.outFlag){
       flag = true
       await takePostRequest('followShop');
-      await $.wait(parseInt(Math.random() * 2000 + 3000, 10))
+      await $.wait(parseInt(Math.random() * 2000 + 300, 10))
     }
 
     $.yaoqing = false
@@ -155,13 +155,13 @@ async function run() {
     if($.yaoqing){
       await takePostRequest('助力');
     }
-    $.log("加购: " + $.addCart)
-    if(!$.addCart && !$.outFlag){
-        flag = true
-        let goodsArr = []
-        await takePostRequest('addCart');
-        await $.wait(parseInt(Math.random() * 2000 + 4000, 10))
-    }
+    // $.log("加购: " + $.addCart)
+    // if(!$.addCart && !$.outFlag){
+    //     flag = true
+    //     let goodsArr = []
+    //     await takePostRequest('addCart');
+    //     await $.wait(parseInt(Math.random() * 2000, 10))
+    // }
     if(flag){
       await takePostRequest('activityContent');
     }
@@ -177,10 +177,10 @@ async function run() {
           console.log("抽奖太多次，多余的次数请再执行脚本")
           break
         }
-        await $.wait(parseInt(Math.random() * 2000 + 2000, 10))
+        await $.wait(parseInt(Math.random() * 2000  , 10))
       }
     
-    await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
+    await $.wait(parseInt(Math.random() * 1000 , 10))
     await takePostRequest('getDrawRecordHasCoupon');
     await takePostRequest('getShareRecord');
     if($.outFlag){
@@ -193,7 +193,7 @@ async function run() {
       $.shareUuid = $.actorUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
-    await $.wait(parseInt(Math.random() * 1000 + 5000, 10))
+    await $.wait(parseInt(Math.random() * 1000 , 10))
   } catch (e) {
     console.log(e)
   }
@@ -721,7 +721,6 @@ function joinShop() {
         if(typeof res == 'object'){
           if(res.success === true){
             console.log(res.message)
-			$.joinShopresmessage = res.message
             if(res.result && res.result.giftInfo){
               for(let i of res.result.giftInfo.giftList){
                 console.log(`入会获得:${i.discountString}${i.prizeName}${i.secondLineDesc}`)
@@ -738,7 +737,7 @@ function joinShop() {
       } catch (e) {
         $.logErr(e, resp)
       } finally {
-        resolve();
+        resolve(data);
       }
     })
   })
