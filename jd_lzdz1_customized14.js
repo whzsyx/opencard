@@ -1,6 +1,6 @@
 /*
 早鸟派对 好物来袭
-cron 7 8 1 1 * * jd_lzdz1_customized14.js
+cron 7 8 1 1  * jd_lzdz1_customized14.js
 */
 const $ = new Env("早鸟派对 好物来袭");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
