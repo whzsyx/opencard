@@ -2,7 +2,7 @@
 大牌联合 春夏约惠
 cron:30 2 13-20/3 3 *jd_lzdz1_customized17.js
 */
-const $ = new Env("大牌联合 春夏约惠");
+const $ = new Env("大牌联合 春夏约惠1");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require("./sendNotify") : "";
 let cookiesArr = [], cookie = "", message = "";
