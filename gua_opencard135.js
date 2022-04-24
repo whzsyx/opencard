@@ -102,7 +102,7 @@ let activityCookie =''
     return;
   }
   $.activityId = 'dzlhkkb2cf44b9b60ad047e6174aec'
-  $.shareUuid = '4.25~5.5 大牌生活范 优价放心购'
+  $.shareUuid = '8e01a33fc0c7426d8c987c3ea393ac2f'
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   let shareUuidArr = [$.shareUuid]
   let s = Math.floor((Math.random()*10))
@@ -301,7 +301,7 @@ async function run() {
       }
     }else{
       if($.index % 3 == 0) console.log('休息1分钟，别被黑ip了\n可持续发展')
-      if($.index % 3 == 0) await $.wait(parseInt(Math.random() * 5000 + 60000, 10))
+      if($.index % 3 == 0) await $.wait(parseInt(Math.random() * 5000 + 6000, 10))
     }
   } catch (e) {
     console.log(e)
