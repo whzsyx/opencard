@@ -42,7 +42,7 @@ let guaopencard = "true"
 let guaopenwait = "0"
 let guaopencard_draw = "0"
 
-const $ = new Env('4.19~4.26 大牌联合 春夏约惠')
+const $ = new Env('4.25~5.5 大牌生活范 优价放心购')
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 CryptoScripts()
