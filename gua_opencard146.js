@@ -12,11 +12,11 @@
 请求太频繁会被黑ip
 过10分钟再执行
 
-cron:15 21 15-23 5 *
+cron:15 21 15-23 4 *
 ============Quantumultx===============
 [task_local]
 #5.16-5.23 情暖五月 以爱之名
-15 21 15-23 5 * gua_opencard146.js, tag=5.16-5.23 情暖五月 以爱之名, enabled=true
+15 21 15-23 4 * gua_opencard146.js, tag=5.16-5.23 情暖五月 以爱之名, enabled=true
 
 */
 
