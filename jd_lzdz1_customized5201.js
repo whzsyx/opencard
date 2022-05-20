@@ -1,6 +1,6 @@
 /*
 童装童鞋盛典
-cron 7 8 11-15 4 *jd_lzdz1_customized5201.js
+cron 7 8 11-15 4 * jd_lzdz1_customized5201.js
 */
 const $ = new Env("童装童鞋盛典");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
