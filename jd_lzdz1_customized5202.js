@@ -2,7 +2,7 @@
 大牌优惠趴 五月爱相伴
 7 8 11-15 4 * jd_lzdz1_customized5202.js
 */
-const $ = new Env("大牌优惠趴 五月爱相伴");
+const $ = new Env("大牌联合 好物焕新季");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require("./sendNotify") : "";
 let cookiesArr = [], cookie = "", message = "";
@@ -56,13 +56,14 @@ if ($.isNode()) {
       $.ADID = getUUID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 1);
       $.UUID = getUUID("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
       authorCodeList = [
-        '19579a52449f4c468e30cf51e5d8fcab'
+       '2afba479a6014449869860b80c9b727b'
+          
       ];
       // $.authorCode = authorCodeList[random(0, authorCodeList.length)];
       $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
       $.authorNum = `${random(1000000, 9999999)}`;
       $.randomCode = random(1000000, 9999999);
-      $.activityId = "dzlhkk9145b47ab912aa953547c9bf4";
+      $.activityId = "dzlhkk5bd64e98a31ebbe366e45bb8";
       $.activityShopId = "1000000904";
       $.activityUrl = `https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=SD&shareuserid4minipg=${encodeURIComponent($.secretPin)}&shopid=undefined&lng=00.000000&lat=00.000000&sid=&un_area=`;
       await member();
