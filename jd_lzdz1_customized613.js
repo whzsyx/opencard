@@ -1,6 +1,6 @@
 /*
 时尚狂欢盛典
-10 0 11-20 6 * jd_lzdz1_customized613.js
+10 0 11-20 4 * jd_lzdz1_customized613.js
 */
 const $ = new Env("时尚狂欢盛典");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
